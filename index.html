@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>DHS Feedback App</title>
+	<link rel="stylesheet" href="static/css/main.css" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href="static/img/dhs.ico" rel="icon" type="image/x-icon" />
+	</head>
+    <body>
+	
+	<BODY BGCOLOR="#000000" BACKGROUND="static/img/gradient.jpg">
+	
+	<header>
+	<h1><a href="http://www.dhs.sg"><img src="static/img/dhs1.png" alt="DHS" height="45px" width="45px" align="middle"></a> DHS feedback app
+	<a href="http://apps.dhs.sg"><img src="static/img/dhsapps.jpg" alt="DHS Apps" style="float:right"></a></h1>
+	</header>
+	
+	<div id="submit">
+	<h3>Submit feedback</h3>
+    <form action="/sign" method="post">
+      <div><textarea name="content" rows="5" cols="45"></textarea></div>
+      <div><input type="submit" value="Submit"></div>
+    </form>
+	<p>Welcome to the DHS Feedback App!</p>
+	<p>Feel free to post feedback that you might have regarding any	aspect of school life.</p>
+	<p>Please exercise discretion when posting, and refrain from usage of vulgarities or 
+	other unsavoury language.</p>
+	<p>If you feel that any post is inappropriate, feel free to report them to me via any of 
+	the links below.</p>
+	<h2>Contact</h2>
+	<p><b><a href="mailto:tan.yugin@dhs.sg" target="_blank">Email</a></b>
+	 . 
+	<b><a href="www.facebook.com/tanyugin" target="_blank">Facebook</a></b>
+	 . 
+	<b><a href="twitter.com/tanyugin" target="_blank">Twitter</a></b></p>
+	<a href="{{ url }}">{{ url_linktext }}</a>
+	</div>
+
+	<div id="responses">
+	<h3>Recent feedback</h3>
+	<div id="studentresponses">
+	{% for greeting in greetings %}
+    <blockquote>{{ greeting.content|escape }}</blockquote>
+    {% endfor %}
+	</div>
+	</div>
+	
+    
+
+  </body>
+</html>
